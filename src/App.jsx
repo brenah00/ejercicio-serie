@@ -1,4 +1,4 @@
-import SerieForm from './components/serieForm.jsx'
+import SerieForm from './components/NumberInputForm.jsx'
 import './App.css'
 
 function App() {
