@@ -1,8 +1,8 @@
-export default function CalculationResult(){
+export default function CalculationResult(number){
     return(
         <>
             <h2>Resultado</h2>
-            <p>*****</p>
+            <p>{number}</p>
         </>
     )
 }
