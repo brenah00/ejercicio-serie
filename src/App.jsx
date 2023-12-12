@@ -4,8 +4,8 @@ import './App.css'
 import { useState } from 'react';
 
 function App() {
-  const [number, setNumber] = useState(0);
-  const [result, setResult] = useState(0);
+  const [number, setNumber] = useState(0n);
+  const [result, setResult] = useState(0n);
   return (
     <section>
       <h1>Serie(n)</h1>

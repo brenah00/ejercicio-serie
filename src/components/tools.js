@@ -1,43 +1,37 @@
 function isPrimo(number) {
-    let count = 0;
-    for (let i = 0; i <= number; i++) {
-        if (number % i === 0) {
-            count++;
+    const sqrtNumber = BigInt(Math.floor(Math.sqrt(Number(number))));
+    for (let i = 3n; i <= sqrtNumber; i += 2n) {
+        if (number % i === 0n) {
+            return false;
         }
     }
-    return count === 2;
+    return true;
 }
 
 export function triangular(n) {
-    return n <= 0 ? 0 : (n * (n + 1)) / 2;
+    n = BigInt(n);
+    return n <= 0n ? 0n : (n * (n + 1n)) / 2n;
 }
 
 export function fibonacci(n) {
-    return n < 0 ? 0 : n === 0 || n === 1 ? n : fibonacci(n - 1) + fibonacci(n - 2)
+    n = BigInt(n);
+    return n < 0n ? 0n : n === 0n || n === 1n ? n : fibonacci(n - 1n) + fibonacci(n - 2n)
 }
 
 export function primo(n) {
-    if (n <= 0) {
-        return 0;
-    }
+    n = BigInt(n);
+    if (n <= 0n) { return 0n; }
+    if (n === 1n) { return 2n; }
 
-    let i = 0;
-    let number = 2;  // Comienza en 2, el primer número primo
+    let count = 1n; 
+    let number = 3n;
 
-    while (i !== n) {
+    while (count !== n) {
         if (isPrimo(number)) {
-            i++;
+            count++;
         }
-        number++;
+        number += 2n;
     }
 
-    return number - 1;
-}
-export function calculationProcess(n) {
-    return [`Serie(${n}) = 2 * triangular(${n} + 2) - 3 * primo(${n} - 1) - 7 * fibonacci(${n})`,
-    `Serie(${n}) = 2 * triangular(${n - (-2)}) - 3 * primo(${n - 1}) - 7 * fibonacci(${n})`]
-    /*
-     <h3>Serie({numberInput}) = 2 * triangular({numberInput} + 2) - 3 * primo({numberInput} - 1) - 7 * fibonacci({numberInput})</h3>
-            <h3>Serie({numberInput}) = 2 * triangular({numberInput - (-2)}) - 3 * primo({numberInput - 1}) - 7 * fibonacci({numberInput})</h3>
-            */
+    return number - 2n;
 }

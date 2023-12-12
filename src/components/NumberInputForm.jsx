@@ -1,23 +1,24 @@
-import { serie } from "./SeriesCalculation";
+//import { serie } from "./SeriesCalculation";
 import PropTypes from 'prop-types';
 
 export default function SerieForm({ numberInput, setNumber, setResult }) {
   function handleInputChange(e) {
     const inputValue = e.target.value;
-    console.log("Parsed Input:", parseInt(inputValue));
-    const numericInput = parseInt(inputValue, 10);
+    //console.log("Parsed Input:", parseInt(inputValue));
+    const numericInput = BigInt(inputValue);
+    console.log(numericInput)
     setNumber(numericInput);
 
-    if (numericInput > 0 && inputValue !== '') {
-      try {
-        const result = serie(numericInput);
-        setResult(result);
-      } catch {
-        console.log('Ha ocurrido un error');
-      }
-    } else {
-      setResult(0);
-    }
+    // if (numericInput > 0 && inputValue !== '') {
+    //   try {
+    //     //const result = serie(BigInt(numericInput));
+    //     //setResult(BigInt(result));
+    //   } catch (error) {
+    //     console.log('Ha ocurrido un error: ', error);
+    //   }
+    // } else {
+    //   setResult(0n);
+    // }
   }
 
   return (
@@ -36,7 +37,7 @@ export default function SerieForm({ numberInput, setNumber, setResult }) {
 }
 
 SerieForm.propTypes = {
-  numberInput: PropTypes.number,
+  numberInput: PropTypes.bigint,
   setNumber: PropTypes.func.isRequired,
   setResult: PropTypes.func.isRequired,
 };
