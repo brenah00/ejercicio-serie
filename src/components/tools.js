@@ -13,10 +13,25 @@ export function triangular(n) {
     return n <= 0n ? 0n : (n * (n + 1n)) / 2n;
 }
 
+//export function fibonacci-recursivo(n) {
+//    n = BigInt(n);
+//    return n < 0n ? 0n : n === 0n || n === 1n ? n : fibonacci(n - 1n) + fibonacci(n - 2n)
+//}
 export function fibonacci(n) {
     n = BigInt(n);
-    return n < 0n ? 0n : n === 0n || n === 1n ? n : fibonacci(n - 1n) + fibonacci(n - 2n)
-}
+    if (n <= 1) { return n; }
+  
+    let fibonacci_2 = 0n;
+    let fibonacci_1 = 1n;
+  
+    for (let i = 2n; i <= n; i++) {
+      let aux = fibonacci_2 + fibonacci_1;
+      fibonacci_2 = fibonacci_1;
+      fibonacci_1 = aux;
+    }
+  
+    return BigInt(fibonacci_1);
+  }
 
 export function primo(n) {
     n = BigInt(n);

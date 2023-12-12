@@ -1,14 +1,3 @@
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  margin-top: 1rem;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #ffffff;
-  cursor: pointer;
-}
 input{
   width: 50%;
   margin: 1rem;
@@ -17,13 +6,10 @@ input{
   padding: 0.6em 1.2em;
   font-size: 1em;
 }
-button:hover {
-  border-color: #646cff;
+.invalid-input-ms{
+  font-size: small;
+  margin: 0;
 }
-.btn-disabled{
-  cursor: not-allowed;
-}
-
 .invalid-input{
   border: 1px solid red;
 }
@@ -33,9 +19,16 @@ section{
   background: rgba(255, 255, 255, 0.5);
   border-radius: 2rem;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
-h3{
-  font-family: 'Source Code Pro', monospace;
+.calculation-serie{
+    font-family: 'Source Code Pro', monospace; 
+    font-size: medium;
+    margin: 0;
+    padding: 0;
+    word-wrap: normal;
+    overflow: auto;
 }
 form{
   width: 100%;
@@ -45,5 +38,17 @@ form{
   justify-content: center;
 }
 p{
+  margin: 1rem;
+}
+img {
+  width: 80%;
+  margin: auto;
+  border-radius: 1rem;
+}
+h1{
+  margin: 0 0 0 1rem;
+}
+h2{
   margin: 0;
+  font-size: large;
 }

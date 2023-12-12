@@ -1,6 +1,4 @@
-:root {
-  
-}
+
 body{
   background:#449fa5;
   margin: 0;
@@ -9,13 +7,9 @@ body{
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
-h1 {
-  
-  line-height: 1.1;
-}
 
 
 
