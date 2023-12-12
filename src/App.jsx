@@ -4,7 +4,7 @@ import './App.css'
 import { useState } from 'react';
 
 function App() {
-  const [number, setNumber] = useState();
+  const [number, setNumber] = useState(0);
   const [result, setResult] = useState();
   return (
     <section>
