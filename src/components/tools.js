@@ -17,8 +17,12 @@ export function fibonacci(n) {
 }
 
 export function primo(n) {
+    if (n <= 0) {
+        return 0;
+    }
+
     let i = 0;
-    let number = 0;
+    let number = 2;  // Comienza en 2, el primer número primo
 
     while (i !== n) {
         if (isPrimo(number)) {
@@ -27,7 +31,7 @@ export function primo(n) {
         number++;
     }
 
-    return n <= 0 ? 0 : number - 1;
+    return number - 1;
 }
 export function calculationProcess(n) {
     return [`Serie(${n}) = 2 * triangular(${n} + 2) - 3 * primo(${n} - 1) - 7 * fibonacci(${n})`,

@@ -4,16 +4,19 @@ import PropTypes from 'prop-types';
 export default function SerieForm({ numberInput, setNumber, setResult }) {
   function handleInputChange(e) {
     const inputValue = e.target.value;
-    setNumber(inputValue);
-    if(parseInt(inputValue)> 0 && inputValue !== ''){
+    console.log("Parsed Input:", parseInt(inputValue));
+    const numericInput = parseInt(inputValue, 10);
+    setNumber(numericInput);
+
+    if (numericInput > 0 && inputValue !== '') {
       try {
-        const result = serie(parseInt(inputValue));
+        const result = serie(numericInput);
         setResult(result);
       } catch {
         console.log('Ha ocurrido un error');
       }
-    }else{
-      setResult(undefined);
+    } else {
+      setResult(0);
     }
   }
 
