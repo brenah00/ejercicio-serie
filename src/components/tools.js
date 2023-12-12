@@ -9,11 +9,11 @@ function isPrimo(number){
 }
 
 export function triangular(n){
-    return (n * (n+1))/2;
+    return n <= 0 ? 0 :(n * (n+1))/2;
 }
 
 export function fibonacci(n){
-    return n === 0 || n === 1 ? n : fibonacci(n - 1) + fibonacci(n - 2)
+    return n < 0 ? 0 : n === 0 || n === 1 ? n : fibonacci(n - 1) + fibonacci(n - 2)
 }
 
 export function primo(n){
@@ -26,5 +26,6 @@ export function primo(n){
         }
         number++;
     }
-    return number-1;
+
+    return n <= 0 ? 0 : number-1;
 }

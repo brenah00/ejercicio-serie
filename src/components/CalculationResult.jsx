@@ -1,4 +1,6 @@
-export default function CalculationResult(number){
+import PropTypes from 'prop-types';
+
+export default function CalculationResult({number}){
     return(
         <>
             <h2>Resultado</h2>
@@ -6,3 +8,7 @@ export default function CalculationResult(number){
         </>
     )
 }
+
+CalculationResult.propTypes = {
+    number: PropTypes.number,
+};
