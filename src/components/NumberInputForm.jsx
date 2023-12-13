@@ -23,6 +23,6 @@ export default function SerieForm({ numberInput, setNumber }) {
 }
 
 SerieForm.propTypes = {
-  numberInput: PropTypes.bigint,
+  numberInput: PropTypes.any,
   setNumber: PropTypes.func.isRequired,
 };

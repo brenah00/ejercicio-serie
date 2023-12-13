@@ -7,6 +7,7 @@ export default function CalculationResult({ numberInput }) {
   const triangularResult = numericInput > 0n ? triangular(numericInput + 2n) : 0n;
   const fibonacciResult = numericInput > 0n ? fibonacci(numericInput) : 0n;
   const primoResult = numericInput > 0n ? primo(numericInput - 1n) : 0n;
+  
   const result = numericInput > 0n ? serie(numericInput) : undefined;
   return (
     <>{(result || numericInput > 0n) && (

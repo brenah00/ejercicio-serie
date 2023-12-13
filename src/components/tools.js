@@ -13,14 +13,18 @@ export function triangular(n) {
     return n <= 0n ? 0n : (n * (n + 1n)) / 2n;
 }
 
+//MAYOR COMPLEJIDAD ALGORITMICA
 //export function fibonacci-recursivo(n) {
 //    n = BigInt(n);
 //    return n < 0n ? 0n : n === 0n || n === 1n ? n : fibonacci(n - 1n) + fibonacci(n - 2n)
 //}
+
+//MENOR COMPLEJIDAD ALGORITMICA
 export function fibonacci(n) {
     n = BigInt(n);
+    if (n < 0) { return 0n; }
     if (n <= 1) { return n; }
-  
+
     let fibonacci_2 = 0n;
     let fibonacci_1 = 1n;
   
@@ -47,6 +51,5 @@ export function primo(n) {
         }
         number += 2n;
     }
-
     return number - 2n;
 }
